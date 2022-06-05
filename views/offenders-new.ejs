@@ -1,0 +1,55 @@
+<%-include ("partials/top") %>
+<div class="row space">
+  <div class="col-12">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
+      <h4 class="page-title">Add Offender</h4>
+    </div>
+  </div> 
+</div> 
+
+<div class="row space">
+<div class="col-12">
+
+<form action='<%= newOffender ? "/admin/offenders/new" : "/admin/offenders/update" %>' method="POST" enctype="multipart/form-data" class="card">
+  <input type="hidden" name="_id" value='<%= offender._id %>'>
+  <fieldset class="row card-body">
+    <div class="form-group col-md-8">
+      <label>Driver Name: </label>
+      <input required type="text" class="form-control" name="fullname" placeholder="Input offending driver's full name" value='<%= offender.fullname %>' />
+    </div>
+    <div class="form-group col-md-4">
+      <label>Phone: </label>
+      <input type="text" class="form-control" name="phone" placeholder="Input the driver contact phone number" value='<%= offender.phone %>' />
+    </div>
+    <div class="form-group col-md-4">
+      <label>Driver License No.: </label>
+      <input type="text" class="form-control" name="driver_license" placeholder="Input the driver license number" value='<%= offender.driver_license %>' />
+    </div>
+    <div class="form-group col-md-4">
+      <label>Offense: </label>
+      <textarea class="form-control" name="offense" placeholder="describe the offense committed by the driver"><%= offender.offense %></textarea>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Date of Offense: </label>
+      <input type="date" class="form-control" name="date_of_offense" value='<%= offender.date_of_offense%>' >
+    </div>
+    <% if (offender.image) { %>
+      <div class="col-md-4">
+        <p>Existing Situation Image</p>
+        <img src='<%= offender.image || "/images/dummy-person.jpg" %>' style="height: 100px; width: 100%;" alt="offender situation image">
+      </div>
+    <% } %>
+    <div class="form-group col-md-4">
+      <label>Offending Driver's Image: <strong class="text-info">*</strong></label>
+      <input type="file" class="form-control" name="image" accept=".jpg,.png" />
+    </div>
+  </fieldset>
+  
+  <div class="form-group mt-4">
+    <button class="btn btn-primary form-control" type="submit">Submit</button>
+  </div>
+</form>
+
+<script>
+
+<%-include ("partials/bottom") %>

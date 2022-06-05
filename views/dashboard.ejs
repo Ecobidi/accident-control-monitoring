@@ -1,0 +1,64 @@
+<%- include ('partials/top') %>
+    <div class="row">
+      <% if (error_msg && error_msg.length > 0) { %>
+        <div class="col-12">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong><%= error_msg %></strong> 
+          </div>
+        </div>
+        <script>
+          $(".alert").alert();
+        </script>
+      <% } %>
+    </div>
+    <div class="row space">
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <a href="/admin/accidents" class="card bg-primary text-white d-flex p-4 align-items-center big-link">
+          <i class="fa fa-exclamation-triangle icon" aria-hidden="true"></i>
+          <div class="d-inline-block text-center">
+            <p class="card-text">Accidents</p>  
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <a href="/admin/eyewitness-reports" class="card bg-danger text-white d-flex p-4 align-items-center big-link">
+          <i class="fa fa-eye-slash icon" aria-hidden="true"></i>
+          <div class="d-inline-block text-center">
+            <p class="card-text">Eyewitness Reports</p>  
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <a href="/admin/offenders" class="card bg-info text-white d-flex p-4 align-items-center big-link">
+          <i class="fa fa-users icon" aria-hidden="true"></i>
+          <div class="d-inline-block text-center">
+            <p class="card-text">Offending Drivers</p>  
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <a href="/admin/enquiries" class="card bg-warning text-dark d-flex p-4 align-items-center big-link">
+          <i class="fa fa-bullhorn icon" aria-hidden="true"></i>
+          <div class="d-inline-block text-center">
+            <p class="card-text">Enquiries</p>  
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <a href="/admin/users" class="card bg-success text-white d-flex p-4 align-items-center big-link">
+          <i class="fa fa-address-card icon" aria-hidden="true"></i>
+          <div class="d-inline-block text-center">
+            <p class="card-text">Administrators</p>  
+          </div>
+        </a>
+      </div>
+    </div> 
+  </main>
+</div>
+
+</div>
+
+<%- include('partials/bottom') %>

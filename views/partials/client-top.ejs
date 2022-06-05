@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="/css/style2.css" type="text/css" />
+  <title><%= appname %></title>
+  <style>
+  .md-banner {
+    height: 220px;
+    background-image: url(/images/md-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 42%;
+  }
+  .md-eyewitness {
+    height: 220px;
+    background-image: url(/images/eye.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 42%;
+  }
+  .title {
+    background-color: rgba(0, 0, 0, 0.63);
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .nav-link {
+    color: #efefef !important;
+  }
+  .nav-link:hover {
+    color: #bbbbbb !important;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-info py-0">
+    <div class="container py-0">
+      <div class="w-100">
+        <a style="color: white !important; font-size: 12px; display: inline-block;" class="nav-link" href="/admin"><i class="fa fa-dashboard" aria-hidden="true"></i> Admin Dashboard</a>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container">
+      <div class="w-100 d-flex align-items-center">
+        <a class="nav-link" href="/">Home </a>
+        <a class="nav-link" href="/send-eyewitness-report">Send EyeWitness Report</a>
+        <a class="nav-link" href="/make-enquiry">Make Enquiry</a>
+      </div>
+    </div>
+  </nav>
+  
+	<div>

@@ -1,0 +1,51 @@
+<%-include ("partials/top") %>
+<div class="row space"> 
+  <div class="col-12">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
+      <h4 class="page-title">Update Accident Report</h4>
+    </div>
+  </div> 
+</div>
+
+<div class="row space">
+<div class="col-12">
+
+<form action='<%= newAccident ? "/admin/accidents/new" : "/admin/accidents/update" %>' method="POST" enctype="multipart/form-data" class="card">
+  <input type="hidden" name="_id" value='<%= accident._id %>'>
+  <fieldset class="row card-body">
+    <div class="form-group col-md-4">
+      <label>Location (Road): <strong class="text-danger">*</strong></label>
+      <input type="text" class="form-control" name="location" value='<%= accident.location %>' />
+    </div>
+    <div class="form-group col-md-4">
+      <label>City: <strong class="text-danger">*</strong></label>
+      <input type="text" class="form-control" name="city" value='<%= accident.city %>' />
+    </div>
+    <div class="form-group col-md-4">
+      <label>Est. Time of Incident: <strong class="text-danger">*</strong></label>
+      <input required type="datetime-local" class="form-control" name="time_of_incident" value='<%= accident.time_of_incident %>' />
+    </div>
+    <div class="form-group col-md-4">
+      <label>Detailed Report: <strong class="text-danger">*</strong></label>
+      <textarea class="form-control" name="report"><%= accident.report %></textarea>
+    </div>
+    <% if (accident.image) { %>
+      <div class="col-md-4">
+        <p>Existing Situation Image</p>
+        <img src='<%= accident.image || "/images/md-banner.jpg" %>' style="height: 100px; width: 100%;" alt="accident situation image">
+      </div>
+    <% } %>
+    <div class="form-group col-md-4">
+      <label>Upload Situation Image: <strong class="text-info">*</strong></label>
+      <input type="file" class="form-control" name="image" accept=".jpg,.png" />
+    </div>
+  </fieldset>
+  
+  <div class="form-group mt-4">
+    <button class="btn btn-primary form-control" type="submit">Submit</button>
+  </div>
+</form>
+
+<script>
+
+<%-include ("partials/bottom") %>

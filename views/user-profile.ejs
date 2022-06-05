@@ -1,0 +1,44 @@
+<%-include ("partials/top") %>
+<div class="row space">
+  <div class="col-12">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
+      <h4 class="page-title">User Profile</h4>
+    </div>
+  </div> 
+</div>
+
+<div class="row space text-uppercase">
+  <div class="col-md-3 col-sm-12 mb-3 text-center text-md-left">
+    <h6 class="text-center p-2 border" style="border-bottom: 4px solid #aaa !important;">Profile Photo</h6>
+    <div class="bg-white">
+      <img src='<%= user.photo %>' style="width: 172px; height: 200px;" />
+    </div>
+  </div>
+  <div class="col-md-9 col-sm-12">
+    <h6 class="p-2 border" style="border-bottom: 4px solid #aaa !important;">Basic Details</h6>
+    <table class="table table-sm-responsive table-responsive bg-white">
+      <tr>
+        <td><span>Name:</span></td>
+        <td><%= user.surname + " " + user.other_names %></td>
+      </tr>
+      <tr>
+        <td><span>Username:</span></td>
+        <td><%= user.username %></td>
+      </tr>
+      <tr>
+        <td><span>Email:</span></td>
+        <td><%= user.email %></td>
+      </tr>
+      <tr>
+        <td><span>Phone:</span></td>
+        <td><%= user.phone %></td>
+      </tr>
+      <tr>
+        <td><span>Time Registered:</span></td>
+        <td><%= user.createdAt.toLocaleString() %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<%-include ("partials/bottom") %>
